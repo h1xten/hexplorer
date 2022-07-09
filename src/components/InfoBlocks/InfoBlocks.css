@@ -1,0 +1,16 @@
+.info_title {
+    margin: 0;
+    user-select: none;
+    margin-top: 2rem;
+    text-align: center;
+}
+.info_blocks{
+    display: flex;
+}
+.info_block {
+    position: relative;
+    margin: 2rem 0 2rem 0;
+}
+.info_block:not(:last-child) {
+    margin-right: 1.5rem !important;
+}

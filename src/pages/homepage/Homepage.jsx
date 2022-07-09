@@ -1,17 +1,22 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { getAccountBalance } from '../../store/addressSlice'
+import InfoBlocks from '../../components/InfoBlocks/InfoBlocks'
+import RecentTransactions from '../../components/RecentTransactions/RecentTransactions'
+import { useGetHbarInfoQuery } from '../../redux/hbarApi'
+import Loader from '../../components/loader/Loader'
 
 const Homepage = () => {
-    const account = '0.0.1048247'
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(getAccountBalance({account}))
+    const {data = [], isLoading: hbarLoading} = useGetHbarInfoQuery({},{
+        pollingInterval: 20000,
     })
 
+    if(hbarLoading) return <Loader/>
   return (
-    <div>Homepage</div>
+    <div className="homepage">
+        <div className="wrapper">
+            <InfoBlocks data={data}/>
+            <RecentTransactions />
+        </div>
+    </div>
   )
 }
 

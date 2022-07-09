@@ -1,21 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
-import RequireAddress from './hoc/RequireAddress';
 import MainLayout from './layout/MainLayout';
 import Address from './pages/address/Address';
 import Homepage from './pages/homepage/Homepage';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'antd/dist/antd.css';
 
 function App() {
   return (
     <BrowserRouter>
         <Routes>
             <Route path='/' element = {<MainLayout />}>
-                <Route index element = {
-                    <RequireAddress>
-                        <Homepage />
-                    </RequireAddress>
-                } />
-
+                <Route index element = {<Homepage />} />
                 <Route path='address' element = {<Address />}/>
             </Route>
         </Routes>
