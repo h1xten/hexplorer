@@ -4,8 +4,8 @@ export const hbarApi = createApi({
     reducerPath: 'hbarApi',
     refetchOnFocus: true,
     baseQuery: fetchBaseQuery({baseUrl: 'https://api.coingecko.com/api/v3/'}),
-    endpoints: (build) => ({
-        getHbarInfo: build.query({
+    endpoints: (builder) => ({
+        getHbarInfo: builder.query({
             query: () => `simple/price?ids=hedera-hashgraph&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`,
             transformResponse: (response) => response['hedera-hashgraph']
         })

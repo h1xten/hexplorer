@@ -1,7 +1,7 @@
 .info_title {
     margin: 0;
     user-select: none;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: center;
 }
 .info_blocks{
@@ -11,6 +11,21 @@
     position: relative;
     margin: 2rem 0 2rem 0;
 }
+.block_title {
+    user-select: none;
+}
 .info_block:not(:last-child) {
     margin-right: 1.5rem !important;
+}
+.supply_vol {
+    font-size: 15px;
+}
+.hbar {
+    color: var(--primary-blue);
+}
+.p_price {
+    color: green;
+}
+.n_price {
+    color: rgb(187, 2, 2);
 }

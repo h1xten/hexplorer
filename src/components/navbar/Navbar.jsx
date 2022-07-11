@@ -3,23 +3,19 @@ import {NavLink} from 'react-router-dom'
 import { Switch } from 'antd'
 import {useTheme} from '../../hooks/use-theme'
 import './Navbar.css'
-import SearchBox from '../SearchBox/SearchBox'
-import NavList from './NavList'
 
 const Navbar = () => {
-    const {theme, setTheme} = useTheme()
-    const changeTheme = () => {
-        setTheme(theme === 'light'? 'dark' : 'light')
-    }
+    // const {theme, setTheme} = useTheme()
+    // const changeTheme = () => {
+    //     setTheme(theme === 'light'? 'dark' : 'light')
+    // }
 
   return (
     <nav className='navbar'>
         <div className='navbar__content wrapper'>
-            <div className='navbar__logo'> <NavLink to= '/'>Hexplorer</NavLink></div>
-            <NavList />
-            <SearchBox />
+            <div className='navbar__logo'> <NavLink to= '/'> <span className='hbar'>H</span>explorer</NavLink></div>
+            {/* <Switch id='switcher' className='navbar__switch' onChange={changeTheme}/> */}
         </div>
-        <Switch id='switcher' className='navbar__switch' onChange={changeTheme}/>
     </nav>
   )
 }

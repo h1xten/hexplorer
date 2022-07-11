@@ -1,4 +1,14 @@
 .recent_transactions {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 2rem 0 2rem 0;
+}
+.transaction_link {
+    color: var(--primary-blue);
+}
+.table {
+    margin: 0 auto;
+}
+.caption {
+    user-select: none;
+    margin-top: 15px;
+    padding: 0;
 }
