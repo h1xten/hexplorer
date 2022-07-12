@@ -46,6 +46,12 @@ body {
     box-shadow: var(--light-shadow);
     color: var(--text-color);
 }
+.link{
+    color: var(--primary-blue);
+}
+.content {
+    margin-top: 1rem;
+}
 
 html[data-theme = 'light'] {
     --main-bg: rgb(230, 231, 233);

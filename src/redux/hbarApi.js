@@ -2,7 +2,6 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 export const hbarApi = createApi({
     reducerPath: 'hbarApi',
-    refetchOnFocus: true,
     baseQuery: fetchBaseQuery({baseUrl: 'https://api.coingecko.com/api/v3/'}),
     endpoints: (builder) => ({
         getHbarInfo: builder.query({

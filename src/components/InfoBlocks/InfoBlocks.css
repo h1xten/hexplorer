@@ -29,3 +29,14 @@
 .n_price {
     color: rgb(187, 2, 2);
 }
+.info_inp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_inp:not(:last-child){
+    margin-bottom: 0.5rem;
+}
+.info_inp>span {
+    margin-right: 3rem;
+}
