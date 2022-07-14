@@ -17,7 +17,6 @@ const RecentTransactions = ({trans}) => {
         <h4 className='info_title'>Recent Transactions</h4>
         <div className='recent_transactions page'>
         <table className="table table-borderless table-hover">
-            <caption className='caption'>Update Every 20s</caption>
             <thead>
                 <tr>
                 <th scope="col">ID</th>

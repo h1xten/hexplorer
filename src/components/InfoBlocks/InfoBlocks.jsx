@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { numberWithCommas } from '../../utils/NumberWithCommas'
 import { VolumeToText } from '../../utils/VolumeToText'
 import {useNavigate} from 'react-router-dom'
+import {notification} from 'antd'
 import './InfoBlocks.css'
 
 const InfoBlocks = ({data, supply}) => {
@@ -12,6 +13,14 @@ const InfoBlocks = ({data, supply}) => {
     const [token, setToken] = useState('')
 
     const searchHandle = (page, id) => {
+        if(!id){
+            const args = {
+                message: `${page.toUpperCase()}`,
+                description: 'Please enter a search value',
+                duration: 2,
+            }
+            return notification.open(args)
+        }
         navigate(`${page}/${id}`)
     }
 

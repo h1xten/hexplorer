@@ -11,9 +11,6 @@ const Address = () => {
   return (
     <div className='address'>
         <div className="address__content wrapper">
-            {/* {!error ? 'Please Enter Your Address And Choose a Network'
-                : 'An error has occurred! Please check that the entered address is correct.'
-            } */}
             Please enter address
         </div>
     </div>

@@ -31,6 +31,20 @@ body {
     line-height: 1;
 }
 
+main {
+    flex: 1 0 auto;
+}
+footer{
+    flex: 0 0 auto;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
 .wrapper {
     max-width: 1240px;
@@ -51,6 +65,21 @@ body {
 }
 .content {
     margin-top: 1rem;
+}
+.loader{
+    position: absolute;
+    width: 100vw;
+    height: 92vh;
+    top: 8vh;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+.error {
+    font-size: 18px;
+    font-style: italic;
 }
 
 html[data-theme = 'light'] {

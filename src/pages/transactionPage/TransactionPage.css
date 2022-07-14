@@ -1,3 +1,6 @@
 .transction_page__content{
     margin-top: 1rem;
 }
+.transction_page__content>h5 {
+    margin-top: 2rem;
+}

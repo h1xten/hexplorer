@@ -17,6 +17,7 @@ const Homepage = () => {
     const {data: supply, isLoading: supplyLoading} = useGetSupplyQuery({})
 
     if(hbarLoading || transLoading || supplyLoading) return <Loader/>
+
   return (
     <div className="homepage">
         <div className="wrapper">

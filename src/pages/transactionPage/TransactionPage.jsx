@@ -6,42 +6,29 @@ import Loader from '../../components/loader/Loader'
 import { useGetTransactionQuery } from '../../redux/hederaApi'
 import getTime from '../../utils/GetTime'
 import Transfers from './Transfers'
+import InfoRow from '../../components/InfoRow/InfoRow'
+import ErrorBlock from '../../components/ErrorBlock/ErrorBlock'
 
 const TransactionPage = () => {
     const {id} = useParams()
-    const {data, isLoading} = useGetTransactionQuery(id)
+    const {data, isLoading, isError, error} = useGetTransactionQuery(id)
     if(isLoading) return <Loader />
+    else if(isError) return <ErrorBlock title = {error.status} value = {error.data._status.messages[0].message.split('.')[0]} />
  
   return (
     <div className='transaction_page wrapper'>
         <h4 className='info_title'>TRANSACTION</h4>
         <div className='transction_page__content page'>
-            <div className='row'>
-                <div className="col-3">
-                    <div>ID:</div>
-                    <div>Hash:</div>
-                    <div>Type:</div>
-                    <div>Consensus At:</div>
-                    <div>Duration:</div>
-                    <div>Status:</div>
-                    <div>Node Account:</div>
-                    <div>Operator Account:</div>
-                    <div>Fee:</div>
-                    <div>Max Fee:</div>
-                </div>
-                <div className='col'>
-                    <div>{data.transaction_id}</div>
-                    <div>{data.transaction_hash}</div>
-                    <div>{data.name}</div>
-                    <div>{getTime(data.consensus_timestamp)}</div>
-                    <div>{data.valid_duration_seconds/60}</div>
-                    <div>{data.result}</div>
-                    <div className='link'> <NavLink to={`/account/${data.node}`}>{data.node}</NavLink></div>
-                    <div className='link'> <NavLink to={`/account/${id.split('-')[0]}`}>{id.split('-')[0]}</NavLink></div>
-                    <div>{data.charged_tx_fee / Math.pow(10, 8)} Hbar</div>
-                    <div>{data.max_fee / Math.pow(10, 8)} Hbar</div>
-                </div>
-            </div>
+            <InfoRow title= 'ID:' value={data.transaction_id} />
+            <InfoRow title= 'Hash:' value={data.transaction_hash} />
+            <InfoRow title= 'Type:' value={data.name} />
+            <InfoRow title= 'Consensus At:' value={getTime(data.consensus_timestamp)} />
+            <InfoRow title= 'Duration:' value={data.valid_duration_seconds/60} />
+            <InfoRow title= 'Status:' value={data.result} />
+            <InfoRow title= 'Node Account:' value={<div className='link'> <NavLink to={`/account/${data.node}`}>{data.node}</NavLink></div>} />
+            <InfoRow title= 'Operator Account:' value={<div className='link'> <NavLink to={`/account/${id.split('-')[0]}`}>{id.split('-')[0]}</NavLink></div>} />
+            <InfoRow title= 'Fee:' value={data.charged_tx_fee / Math.pow(10, 8) + ' Hbar'} />
+            <InfoRow title= 'Max Fee:' value={data.max_fee / Math.pow(10, 8) + ' Hbar'} />
             <h5>TRANSFERS</h5>
             <Transfers transfers = {data.transfers} node = {data.node} operator = {id.split('-')[0]} />
         </div>

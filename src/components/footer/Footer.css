@@ -1,4 +1,7 @@
-.navbar {
+footer {
+   
+}
+.footer {
     position: relative;
     display: flex;
     user-select: none;
@@ -10,25 +13,9 @@
     color: var(--primary-color);
     box-shadow: var(--dark-shadow); 
 }
-.navbar__content {
+.footer__content {
     display: flex;
     justify-content:space-between;
     align-items: center;
     width: 100%;
-}
-.navbar__switch {
-    position: fixed;
-    right: 15px;
-}
-.ant-switch-checked {
-    background: var(--primary-color) !important;
-}
-.navbar__logo > a {
-    border: 0;
-}
-.nav-list {
-    display: flex;
-}
-.nav-list>div:not(:last-child){
-    margin-right: 2rem;
 }
