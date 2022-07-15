@@ -32,3 +32,6 @@
 .nav-list>div:not(:last-child){
     margin-right: 2rem;
 }
+.navbar__net {
+    margin-right: 4rem !important;
+}

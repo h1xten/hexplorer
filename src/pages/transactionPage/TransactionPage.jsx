@@ -8,10 +8,14 @@ import getTime from '../../utils/GetTime'
 import Transfers from './Transfers'
 import InfoRow from '../../components/InfoRow/InfoRow'
 import ErrorBlock from '../../components/ErrorBlock/ErrorBlock'
+import { useSelector } from 'react-redux'
+import getDynamicQuery from '../../utils/getDynamicQuery'
 
 const TransactionPage = () => {
+    const state_net = useSelector(state => state.net.net)
+    const net = getDynamicQuery(state_net)
     const {id} = useParams()
-    const {data, isLoading, isError, error} = useGetTransactionQuery(id)
+    const {data, isLoading, isError, error} = useGetTransactionQuery({net, id})
     if(isLoading) return <Loader />
     else if(isError) return <ErrorBlock title = {error.status} value = {error.data._status.messages[0].message.split('.')[0]} />
  

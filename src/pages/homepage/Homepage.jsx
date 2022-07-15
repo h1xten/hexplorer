@@ -4,17 +4,21 @@ import RecentTransactions from '../../components/RecentTransactions/RecentTransa
 import { useGetHbarInfoQuery } from '../../redux/hbarApi'
 import Loader from '../../components/loader/Loader'
 import { useGetSupplyQuery, useGetTransactionsQuery } from '../../redux/hederaApi'
+import getDynamicQuery from '../../utils/getDynamicQuery'
+import { useSelector } from 'react-redux'
 
 const Homepage = () => {
+    const state_net = useSelector(state => state.net.net)
+    const net = getDynamicQuery(state_net)
     const {data = [], isLoading: hbarLoading} = useGetHbarInfoQuery({},{
         pollingInterval: 20000,
     })
 
-    const {data: trans, isLoading: transLoading} = useGetTransactionsQuery({}, {
+    const {data: trans, isLoading: transLoading} = useGetTransactionsQuery(net, {
         pollingInterval: 20000,
     })
 
-    const {data: supply, isLoading: supplyLoading} = useGetSupplyQuery({})
+    const {data: supply, isLoading: supplyLoading} = useGetSupplyQuery(net)
 
     if(hbarLoading || transLoading || supplyLoading) return <Loader/>
 

@@ -4,10 +4,14 @@ import InfoRow from '../../components/InfoRow/InfoRow'
 import Loader from '../../components/loader/Loader'
 import ErrorBlock from '../../components/ErrorBlock/ErrorBlock'
 import { useGetAccountQuery } from '../../redux/hederaApi'
+import { useSelector } from 'react-redux'
+import { MAINNET_API_URL, TESTNET_API_URL } from '../../config'
 
 const AccountPage = () => {
+    const chooseNet = useSelector(state => state.net.net)
+    const net = chooseNet === 'mainnet' ? MAINNET_API_URL : TESTNET_API_URL
     const {acc} = useParams()
-    const {data, isLoading, isError, error} = useGetAccountQuery(acc)
+    const {data, isLoading, isError, error} = useGetAccountQuery({net, acc})
     if(isLoading) return <Loader />
     else if(isError) return <ErrorBlock title = {error.status} value = {error.data._status.messages[0].message} />
 
