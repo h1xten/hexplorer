@@ -1,7 +1,7 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
 import InfoRow from '../../components/InfoRow/InfoRow'
-import Loader from '../../components/Loader/Loader'
+import Loader from '../../components/loader/Loader'
 import ErrorBlock from '../../components/ErrorBlock/ErrorBlock'
 import { useGetAccountQuery } from '../../redux/hederaApi'
 import { useSelector } from 'react-redux'
