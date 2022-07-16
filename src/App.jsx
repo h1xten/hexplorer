@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layout/MainLayout';
-import Address from './pages/address/Address';
-import Homepage from './pages/homepage/Homepage';
+import Address from './pages/Address/Address';
+import Homepage from './pages/Homepage/Homepage';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'antd/dist/antd.css';
-import TransactionPage from './pages/transactionPage/TransactionPage';
-import AccountPage from './pages/account/AccountPage';
-import TokenPage from './pages/tokenPage/TokenPage';
+import TransactionPage from './pages/TransactionPage/TransactionPage';
+import AccountPage from './pages/Account/AccountPage';
+import TokenPage from './pages/TokenPage/TokenPage';
 
 function App() {
   return (

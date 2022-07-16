@@ -18,7 +18,7 @@ const Transfers = ({transfers, node, operator}) => {
             {n_trans.map((elem) => 
                 <div key={elem.account}> 
                     <span className='link'><NavLink to={`/account/${elem.account}`}>{elem.account} </NavLink></span>
-                    Amount: <span className='n_price'>{elem.amount / Math.pow(10, 8)} </span>
+                    Amount: <span className='n_price'>{elem.amount / Math.pow(10, 8)}<span className='hbar'> &#8463; </span> </span>
                     {elem.account === operator ? <span>(Operator)</span> : ''}
                 </div>)}
         </div>
@@ -27,7 +27,7 @@ const Transfers = ({transfers, node, operator}) => {
             {p_trans.map((elem) => 
                 <div key={elem.account}> 
                     <span className='link'><NavLink to={`/account/${elem.account}`}>{elem.account} </NavLink></span>
-                    Amount: <span className='p_price'>{elem.amount / Math.pow(10, 8)} </span>
+                    Amount: <span className='p_price'>{elem.amount / Math.pow(10, 8)}<span className='hbar'> &#8463; </span> </span>
                     {elem.account === node ? <span>(Node)</span> : ''} {elem.account === collector ? <span>(Fee Collection)</span> : ''}
                 </div>)}
         </div>

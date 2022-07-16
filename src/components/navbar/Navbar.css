@@ -35,3 +35,7 @@
 .navbar__net {
     margin-right: 4rem !important;
 }
+.hbar__logo {
+    font-size: 25px;
+    color: var(--primary-blue);
+}

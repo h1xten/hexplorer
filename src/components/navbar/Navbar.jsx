@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
         <div className='navbar__content wrapper'>
-            <div className='navbar__logo'> <NavLink to= '/'> <span className='hbar'>H</span>explorer</NavLink></div>
+            <div className='navbar__logo'> <NavLink to= '/'> <span className='hbar__logo'>&#8463;</span>explorer</NavLink></div>
             <div className='beta'>
                 <Select 
                     className='navbar__net'

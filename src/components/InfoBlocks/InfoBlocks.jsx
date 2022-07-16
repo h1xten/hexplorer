@@ -57,12 +57,12 @@ const InfoBlocks = ({data, supply}) => {
                     <div>Released Supply:</div>
                     <div className='supply_vol'>
                         {numberWithCommas(((supply.released_supply)/Math.pow(10, 8)).toFixed(3))} 
-                        <span className='hbar'> HBAR</span>
+                        <span className='hbar'> &#8463; </span>
                     </div>
                     <div>Total Supply:</div>
                     <div className='supply_vol'>
                         {numberWithCommas((supply.total_supply)/Math.pow(10, 8))} 
-                        <span className='hbar'> HBAR</span>
+                        <span className='hbar'> &#8463; </span>
                     </div>
                 </div>
             </div>

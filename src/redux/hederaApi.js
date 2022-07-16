@@ -31,7 +31,7 @@ export const hederaApi = createApi({
             })
         }),
         getToken: builder.query({
-            query: (net, token) => ({
+            query: ({net, token}) => ({
                 url: `${net}/api/v1/tokens/${token}`
             })
         })
