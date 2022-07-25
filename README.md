@@ -2,7 +2,7 @@
 
 <img src='./public/logo_transparent.png' alt='Hexplorer' >
 
-**Hexplorer** is a Hedera mainnet explorer developed by h1xten.
+**Hexplorer** is a Hedera mainnet and testnet explorer developed by h1xten.
 
 ## Development
 Developed with 
